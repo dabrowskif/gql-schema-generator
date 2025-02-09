@@ -1,4 +1,4 @@
-import { writeFileSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 import {
   stringifyQueryArgs,
   stringifyField,
@@ -42,6 +42,10 @@ export async function generateQueries(config: CLIConfig) {
       ctx.boundedArgs,
     );
 
-    writeFileSync(`generated-queries/${queryName}.txt`, finalQuery);
+    const dirPath = "generated-queries";
+    if (!existsSync(dirPath)) {
+      mkdirSync(dirPath, { recursive: true });
+    }
+    writeFileSync(`${dirPath}/${queryName}.txt`, finalQuery);
   });
 }
