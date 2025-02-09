@@ -1,5 +1,4 @@
 import { getFieldArguments } from "../argument-extractor";
-import { removeEmptyParamsFromAlias } from "../query-generator/utils";
 import { Field } from "../types";
 
 /**
@@ -26,4 +25,8 @@ export function addArgsToQuery(field: Field) {
     .join(", ");
 
   return `${field.alias}(${args})`;
+}
+
+function removeEmptyParamsFromAlias(alias: string) {
+  return alias.slice(0, alias.length - 2);
 }
