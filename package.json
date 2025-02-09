@@ -1,0 +1,21 @@
+{
+  "name": "local-e2e-testing",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/lodash": "^4.17.14",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "generate-config": "npx tsx scripts/generate-config.ts",
+    "start": "npx tsx src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^16.10.0"
+  }
+}
