@@ -23,12 +23,13 @@ export type CTX = {
 
 export type Options = {
   maxDepth: number;
-  maxSelfRef: number;
-  skipCartesianForFields: {
+  skipCartesianEntirely?: boolean;
+  skipCartesianForFields?: {
     field: string;
     argName: string;
     hardcodedValue: string;
   }[];
+  maxCartesianItems?: number;
 };
 
 export type CLIConfig = {
@@ -38,5 +39,4 @@ export type CLIConfig = {
    */
   skipCartesianForFields?: Options["skipCartesianForFields"];
   maxDepth?: Options["maxDepth"];
-  maxSelfRef?: Options["maxSelfRef"];
 };

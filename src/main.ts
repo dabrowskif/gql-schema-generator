@@ -13,7 +13,6 @@ export async function generateQueries(config: CLIConfig) {
 
   const opts: Options = {
     maxDepth: config.maxDepth ?? 30,
-    maxSelfRef: config.maxSelfRef ?? 5,
     skipCartesianForFields: config.skipCartesianForFields ?? [],
   };
 

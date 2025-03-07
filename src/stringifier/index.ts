@@ -23,10 +23,6 @@ export function stringifyField<T>(
   // Prevent infinite recursion
   if (ctx.depth > opts.maxDepth) return "";
 
-  // Prevent deep self-referencing loops
-  // const selfRefCount = getSelfRefCount(field.name, ctx.parentKey);
-  // if (selfRefCount >= opts.maxSelfRef) return "";
-
   // FIXME: weird types narrowing in all if cases
   if (field.type instanceof GraphQLObjectType) {
     return stringifyObjectType(
